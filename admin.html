@@ -14,7 +14,7 @@
 }
 body{background:var(--bg);color:var(--txt);font:15px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
-input{font:inherit}
+input,select{font:inherit}
 ::-webkit-scrollbar{height:8px;width:8px}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:4px}
 
 /* ---------- login ---------- */
@@ -30,7 +30,7 @@ input{font:inherit}
 
 /* ---------- app ---------- */
 #app{display:none}
-header{position:sticky;top:0;z-index:50;background:rgba(5,6,15,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header{position:sticky;top:0;z-index:50;background:rgba(5,6,15,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 header .row{max-width:1200px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 header .brand{font-weight:800;font-size:17px;background:linear-gradient(100deg,#a78bfa,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent}
 header .live{color:var(--ok);font-size:12.5px;display:flex;align-items:center;gap:6px}
@@ -42,7 +42,7 @@ nav{max-width:1200px;margin:0 auto;padding:0 18px;display:flex;gap:6px;overflow-
 nav::-webkit-scrollbar{display:none}
 nav button{padding:9px 16px;border-radius:10px;color:var(--txt2);font-size:14px;white-space:nowrap;border:1px solid transparent}
 nav button.act{background:rgba(124,92,255,.14);color:#c4b5fd;border-color:rgba(124,92,255,.35)}
-main{max-width:1200px;margin:0 auto;padding:20px 18px 60px}
+main{max-width:1200px;margin:0 auto;padding:20px 18px 80px}
 
 /* ---------- overview ---------- */
 .stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-bottom:22px}
@@ -50,25 +50,38 @@ main{max-width:1200px;margin:0 auto;padding:20px 18px 60px}
 .st .v{font-size:22px;font-weight:800;letter-spacing:-.02em}
 .st .v.ok{color:var(--ok)}.st .v.acc{color:#a78bfa}.st .v.warn{color:var(--warn)}.st .v.bad{color:var(--bad)}
 .st .l{color:var(--txt2);font-size:12px;margin-top:3px}
-.days{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
-.days h4{font-size:14px;color:var(--txt2);margin-bottom:14px}
-.bars{display:flex;align-items:flex-end;gap:6px;height:90px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px}
+.panel h4{font-size:13px;color:var(--txt2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+.kv{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.kv:last-child{border-bottom:0}
+.kv b{white-space:nowrap}
+.feed{display:flex;flex-direction:column;gap:2px}
+.feed .ev{display:flex;gap:10px;padding:8px 4px;border-bottom:1px solid var(--line);font-size:13px;align-items:baseline}
+.feed .ev:last-child{border-bottom:0}
+.feed .ev .ic{font-size:15px}
+.feed .ev .tx{flex:1;color:var(--txt2);word-break:break-word}
+.feed .ev .tm{color:var(--txt3);font-size:11px;white-space:nowrap}
+.days .bars{display:flex;align-items:flex-end;gap:6px;height:90px;margin-bottom:24px}
 .bars .b{flex:1;background:linear-gradient(180deg,#7c5cff,#22d3ee);border-radius:6px 6px 2px 2px;min-height:2px;position:relative}
 .bars .b span{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-size:9.5px;color:var(--txt3);white-space:nowrap}
-.bars{margin-bottom:24px}
 
 /* ---------- tables ---------- */
-.tools{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
-.tools input{flex:1;min-width:180px;padding:11px 15px;border-radius:11px;background:var(--bg2);border:1px solid var(--line);color:var(--txt);outline:none;font-size:14px}
+.tools{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;align-items:center}
+.tools input{flex:1;min-width:170px;padding:11px 15px;border-radius:11px;background:var(--bg2);border:1px solid var(--line);color:var(--txt);outline:none;font-size:14px}
 .tools input:focus{border-color:var(--acc)}
-.tools .cnt{align-self:center;color:var(--txt3);font-size:13px}
+.tools .cnt{color:var(--txt3);font-size:13px}
+.fchips{display:flex;gap:6px;flex-wrap:wrap}
+.fc{padding:7px 13px;border-radius:9px;background:var(--card);border:1px solid var(--line);color:var(--txt2);font-size:12.5px}
+.fc.act{background:rgba(124,92,255,.15);color:#c4b5fd;border-color:rgba(124,92,255,.4)}
 .tblwrap{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
 table{width:100%;border-collapse:collapse;font-size:13.5px}
 th{padding:11px 14px;text-align:left;color:var(--txt2);font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;border-bottom:1px solid var(--line);white-space:nowrap;background:rgba(255,255,255,.02)}
 td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
 tr:last-child td{border-bottom:0}
-tbody tr:hover{background:rgba(255,255,255,.025)}
+tbody tr:not(.norec):hover{background:rgba(255,255,255,.03);cursor:pointer}
 .mono{font-family:ui-monospace,Consolas,monospace;font-size:12.5px;color:#c4b5fd}
+.sub2{color:var(--txt3);font-size:11px}
 .pill{display:inline-block;padding:3px 9px;border-radius:7px;font-size:11.5px;font-weight:600}
 .pill.ok{background:rgba(74,222,128,.13);color:var(--ok)}
 .pill.bad{background:rgba(248,113,113,.13);color:var(--bad)}
@@ -81,27 +94,42 @@ td .acts{display:flex;gap:6px;flex-wrap:wrap}
 .ab.danger:hover{color:var(--bad);border-color:var(--bad)}
 .ab.grn:hover{color:var(--ok);border-color:var(--ok)}
 .empty{padding:40px;text-align:center;color:var(--txt3);font-size:14px}
-.ref-row td{border-bottom:1px solid var(--line)}
 .rank{font-size:15px}
-.rank b{color:#c4b5fd}
+
+/* ---------- modal ---------- */
+#modal{position:fixed;inset:0;z-index:300;display:none}
+#modal.on{display:flex;align-items:flex-start;justify-content:center}
+#modal .bg{position:absolute;inset:0;background:rgba(2,3,10,.75);backdrop-filter:blur(4px)}
+#modal .win{position:relative;width:100%;max-width:640px;margin:40px 16px;background:#0b0d1c;border:1px solid rgba(124,92,255,.35);border-radius:18px;max-height:calc(100vh - 80px);overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,.6)}
+#modal .mhead{position:sticky;top:0;background:#0b0d1c;padding:18px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px;z-index:2}
+#modal .mhead .mt{font-weight:700;font-size:16px}
+#modal .mhead .x{padding:6px 12px;border-radius:9px;background:var(--card);border:1px solid var(--line);color:var(--txt2);font-size:18px;line-height:1}
+#modal .mbody{padding:20px 22px}
+.mrow{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.mrow .mk{color:var(--txt2);white-space:nowrap}
+.mrow .mv{text-align:right;word-break:break-all}
+.msec{margin:18px 0 8px;font-size:12px;color:var(--acc2);text-transform:uppercase;letter-spacing:.08em}
+.mact{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.mact .ab{padding:9px 16px;font-size:13px}
+.listi{padding:8px 12px;border:1px solid var(--line);border-radius:11px;margin-bottom:6px;font-size:13px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.listi .nm{font-weight:600}
+.listi .meta{color:var(--txt3);font-size:11.5px}
 
 /* ---------- toast ---------- */
-#toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(80px);background:#151830;border:1px solid var(--acc);color:var(--txt);padding:12px 22px;border-radius:12px;font-size:14px;transition:.25s;z-index:200;max-width:90vw}
+#toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(80px);background:#151830;border:1px solid var(--acc);color:var(--txt);padding:12px 22px;border-radius:12px;font-size:14px;transition:.25s;z-index:400;max-width:90vw}
 #toast.on{transform:translateX(-50%) translateY(0)}
 #toast.bad{border-color:var(--bad)}
 
-/* ---------- responsive: карточки на мобиле ---------- */
+@media(max-width:860px){.cols{grid-template-columns:1fr}}
 @media(max-width:720px){
-  main{padding:14px 12px 50px}
+  main{padding:14px 12px 60px}
   .tblwrap{overflow-x:auto;border-radius:14px}
   th{position:sticky;top:0;background:#0b0d1c}
   .stats{grid-template-columns:repeat(2,1fr)}
   header .live span{display:none}
+  #modal .win{margin:12px 8px;max-height:calc(100vh - 24px)}
 }
-@media(max-width:480px){
-  .stats{grid-template-columns:1fr 1fr}
-  .st .v{font-size:19px}
-}
+@media(max-width:480px){.stats{grid-template-columns:1fr 1fr}.st .v{font-size:19px}}
 </style>
 </head>
 <body>
@@ -140,6 +168,11 @@ td .acts{display:flex;gap:6px;flex-wrap:wrap}
   <main id="main"></main>
 </div>
 
+<div id="modal"><div class="bg"></div><div class="win">
+  <div class="mhead"><span class="mt" id="mTitle"></span><button class="x" id="mClose">×</button></div>
+  <div class="mbody" id="mBody"></div>
+</div></div>
+
 <div id="toast"></div>
 
 <script>
@@ -148,13 +181,14 @@ var API = "https://celestial.fertixber1.workers.dev/admin/api/";
 var key = localStorage.getItem("cel_admin_key") || "";
 var cache = {};
 var cur = "overview";
+var licFilter = "all";
 
 function toast(msg, isBad){
   var t = document.getElementById("toast");
   t.textContent = msg;
   t.className = isBad ? "on bad" : "on";
   clearTimeout(t._h);
-  t._h = setTimeout(function(){ t.className = ""; }, 2600);
+  t._h = setTimeout(function(){ t.className = ""; }, 2800);
 }
 function esc(s){
   return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){
@@ -169,11 +203,13 @@ function api(sub, opts){
     body: opts.body ? JSON.stringify(opts.body) : undefined
   }).then(function(r){ return r.json().catch(function(){ return {success:false,message:"bad json"}; }); });
 }
-function fmtAgo(ts){
-  if (!ts || ts === "—") return "—";
-  var d = new Date(ts.replace(/(\d{2})\.(\d{2})\.(\d{4}) (\d{2}):(\d{2})/, "$3-$2-$1T$4:$5"));
-  if (isNaN(d)) return ts;
+function ago(ts){
+  if (!ts || ts === "—") return "";
+  var m = String(ts).match(/^(\d{2})\.(\d{2})\.(\d{4}),? (\d{2}):(\d{2})/);
+  var d = m ? new Date(+m[3], +m[2]-1, +m[1], +m[4], +m[5]) : new Date(ts);
+  if (isNaN(d.getTime())) return "";
   var s = (Date.now() - d.getTime()) / 1000;
+  if (s < 0) s = 0;
   if (s < 60) return "только что";
   if (s < 3600) return Math.floor(s/60) + " мин назад";
   if (s < 86400) return Math.floor(s/3600) + " ч назад";
@@ -198,10 +234,7 @@ function tryLogin(k){
 document.getElementById("loginBtn").onclick = function(){ tryLogin(document.getElementById("keyInput").value.trim()); };
 document.getElementById("keyInput").addEventListener("keydown", function(e){ if (e.key === "Enter") tryLogin(this.value.trim()); });
 if (key) tryLogin(key);
-document.getElementById("logoutBtn").onclick = function(){
-  localStorage.removeItem("cel_admin_key");
-  location.reload();
-};
+document.getElementById("logoutBtn").onclick = function(){ localStorage.removeItem("cel_admin_key"); location.reload(); };
 document.getElementById("refreshBtn").onclick = function(){ cache = {}; render(); toast("Обновлено"); };
 
 // ---------- tabs ----------
@@ -212,6 +245,19 @@ document.getElementById("tabs").addEventListener("click", function(e){
   this.querySelectorAll("button").forEach(function(x){ x.classList.toggle("act", x === b); });
   render();
 });
+
+// ---------- modal ----------
+function openModal(title, html){
+  document.getElementById("mTitle").innerHTML = title;
+  document.getElementById("mBody").innerHTML = html;
+  document.getElementById("modal").classList.add("on");
+}
+function closeModal(){ document.getElementById("modal").classList.remove("on"); }
+document.getElementById("mClose").onclick = closeModal;
+document.querySelector("#modal .bg").onclick = closeModal;
+document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeModal(); });
+
+function mrow(k, v){ return '<div class="mrow"><span class="mk">' + k + '</span><span class="mv">' + v + '</span></div>'; }
 
 // ---------- render ----------
 function render(){
@@ -229,25 +275,49 @@ function renderOverview(m){
   if (cache.overview){
     var d = cache.overview;
     var max = Math.max.apply(null, d.days.map(function(x){ return x.c; }).concat([1]));
+    var methodNames = { stars: "⭐ Stars", sbp: "🏦 СБП", crypto: "₿ Крипта", manual: "✋ Вручную", sim: "🧪 Сим" };
     m.innerHTML =
       '<div class="stats">' +
       st(d.sold, "Продано ключей", "acc") +
+      st(d.activeSubs, "Активных подписок", "ok") +
+      st(d.expiringSoon, "Истекают ≤3 дн", d.expiringSoon ? "warn" : "") +
       st(d.stars + " ⭐", "Выручка Stars", "ok") +
-      st(d.rub.toLocaleString("ru-RU") + " ₽", "Выручка ₽ (ручная)", "ok") +
+      st(d.rub.toLocaleString("ru-RU") + " ₽", "Выручка ₽", "ok") +
       st(d.users, "Юзеров в боте", "") +
       st(d.launchers, "Лаунчеров", "") +
       st(d.launchesToday, "Запусков сегодня", "acc") +
       st(d.launchesTotal, "Запусков всего", "") +
       st(d.pendingOrders, "Заказов ждут", d.pendingOrders ? "warn" : "") +
-      st(d.referrals, "Рефералов пришло", "acc2") +
-      st(d.bannedLaunchers, "Забанено лаунчеров", d.bannedLaunchers ? "bad" : "") +
-      st(d.killedLaunchers, "Килл-лист", d.killedLaunchers ? "bad" : "") +
+      st(d.referrals, "Рефералов пришло", "acc") +
       st(d.refUsers, "Приглашающих", "") +
+      st(d.bannedLaunchers, "Банов лаунчеров", d.bannedLaunchers ? "bad" : "") +
+      st(d.killedLaunchers, "Килл-лист", d.killedLaunchers ? "bad" : "") +
       '</div>' +
-      '<div class="days"><h4>Запуски по дням (последний ' + d.lastLaunch + ')</h4><div class="bars">' +
-      d.days.slice().reverse().map(function(x){
-        return '<div class="b" style="height:' + Math.max(3, x.c / max * 90) + 'px" title="' + x.d + ': ' + x.c + '"><span>' + x.d.slice(8) + '.' + x.d.slice(5,7) + '</span></div>';
-      }).join("") + '</div></div>';
+      '<div class="cols">' +
+        '<div class="panel"><h4>Выручка по методам</h4>' +
+          Object.keys(d.methodDist).map(function(k){
+            var v = d.methodDist[k];
+            return '<div class="kv"><span>' + (methodNames[k] || esc(k)) + ' · ' + v.count + ' шт</span><b>' + (k === "stars" ? v.amount + " ⭐" : v.amount.toLocaleString("ru-RU") + " ₽") + '</b></div>';
+          }).join("") || '<div class="empty">Нет продаж</div>' +
+        '</div>' +
+        '<div class="panel"><h4>Ключи по тарифам</h4>' +
+          Object.keys(d.planDist).map(function(k){
+            return '<div class="kv"><span>' + esc(k) + '</span><b>' + d.planDist[k] + '</b></div>';
+          }).join("") || '<div class="empty">Нет ключей</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="cols">' +
+        '<div class="panel"><h4>Последние события</h4><div class="feed">' +
+          d.events.map(function(e){
+            var ic = e.type === "sale" ? "💰" : e.type === "launch" ? "🚀" : "👤";
+            return '<div class="ev"><span class="ic">' + ic + '</span><span class="tx">' + esc(e.text) + '</span><span class="tm">' + esc(e.tStr) + '</span></div>';
+          }).join("") || '<div class="empty">Событий нет</div>' +
+        '</div></div>' +
+        '<div class="panel days"><h4>Запуски по дням · последний: ' + esc(d.lastLaunch) + '</h4><div class="bars">' +
+          d.days.slice().reverse().map(function(x){
+            return '<div class="b" style="height:' + Math.max(3, x.c / max * 90) + 'px" title="' + x.d + ': ' + x.c + '"><span>' + x.d.slice(8) + '.' + x.d.slice(5,7) + '</span></div>';
+          }).join("") + '</div></div>' +
+      '</div>';
     return;
   }
   m.innerHTML = '<div class="empty">Загрузка…</div>';
@@ -261,28 +331,44 @@ function st(v, l, cls){
   return '<div class="st"><div class="v ' + (cls||"") + '">' + esc(v) + '</div><div class="l">' + l + '</div></div>';
 }
 
-// ---------- generic table with search ----------
-function scaffold(m, title, searchPlaceholder, cols, rowsHtml){
+// ---------- generic table ----------
+function scaffold(m, placeholder, cols, rowsHtml, filterChips){
+  var chips = filterChips ? '<div class="fchips">' + filterChips.map(function(c){
+    return '<button class="fc' + (c.act ? " act" : "") + '" data-fc="' + c.id + '">' + c.label + '</button>';
+  }).join("") + '</div>' : "";
   m.innerHTML =
-    '<div class="tools"><input id="q" placeholder="' + searchPlaceholder + '"><span class="cnt" id="cnt"></span></div>' +
+    '<div class="tools">' + chips + '<input id="q" placeholder="' + placeholder + '"><span class="cnt" id="cnt"></span></div>' +
     '<div class="tblwrap"><table><thead><tr>' +
     cols.map(function(c){ return '<th>' + c + '</th>'; }).join("") +
     '</tr></thead><tbody id="tb"></tbody></table></div>';
   document.getElementById("tb").innerHTML = rowsHtml;
   var q = document.getElementById("q");
-  q.addEventListener("input", function(){
-    var v = this.value.toLowerCase();
+  q.addEventListener("input", applyFilter);
+  applyFilter();
+  function applyFilter(){
+    var v = q.value.toLowerCase();
     var rows = document.querySelectorAll("#tb tr");
     var n = 0;
     rows.forEach(function(r){
-      var show = !v || r.textContent.toLowerCase().indexOf(v) !== -1;
+      var show = (!v || r.textContent.toLowerCase().indexOf(v) !== -1) && (!r.dataset.f || r.dataset.f === licFilter || licFilter === "all");
       r.style.display = show ? "" : "none";
       if (show) n++;
     });
     document.getElementById("cnt").textContent = n + " / " + rows.length;
-  });
+  }
 }
+document.getElementById("main").addEventListener("click", function(e){
+  var fc = e.target.closest(".fc");
+  if (fc){
+    licFilter = fc.dataset.fc;
+    fc.parentElement.querySelectorAll(".fc").forEach(function(x){ x.classList.toggle("act", x === fc); });
+    var q = document.getElementById("q");
+    if (q){ q.value = ""; q.dispatchEvent(new Event("input")); }
+    return;
+  }
+});
 
+// ---------- launchers ----------
 function renderLaunchers(m){
   if (!cache.launchers){
     m.innerHTML = '<div class="empty">Загрузка…</div>';
@@ -297,26 +383,52 @@ function renderLaunchers(m){
     status += x.killed ? '<span class="pill bad">килл</span> ' : "";
     status += x.hasMsg ? '<span class="pill warn">✉ msg</span>' : "";
     if (!status) status = '<span class="pill ok">ок</span>';
-    return '<tr data-id="' + esc(x.id) + '">' +
-      '<td class="mono">' + esc(x.id) + '<div style="color:var(--txt3);font-size:11px">hwid …' + esc(x.hwid) + '</div></td>' +
-      '<td class="mono">' + esc(x.key) + '<div style="color:var(--txt3);font-size:11px">user ' + esc(x.user) + '</div></td>' +
+    return '<tr data-id="' + esc(x.id) + '" class="row-launcher">' +
+      '<td class="mono">' + esc(x.id) + '<div class="sub2">hwid …' + esc(x.hwid) + '</div></td>' +
+      '<td class="mono">' + esc(x.key) + '<div class="sub2">user ' + esc(x.user) + '</div></td>' +
       '<td><b>' + x.count + '</b></td>' +
-      '<td>' + esc(x.lastStr) + '<div style="color:var(--txt3);font-size:11px">' + fmtAgo(x.lastStr) + '</div></td>' +
+      '<td>' + esc(x.lastStr) + '<div class="sub2">' + ago(x.lastStr) + '</div></td>' +
       '<td>' + status + '</td>' +
-      '<td><div class="acts">' +
-        (x.banned
-          ? '<button class="ab grn" data-act="unban">Разбан</button>'
-          : '<button class="ab danger" data-act="ban">Бан</button>') +
-        (x.killed
-          ? '<button class="ab grn" data-act="unkill">Снять килл</button>'
-          : '<button class="ab danger" data-act="kill">💀 Килл</button>') +
-        '<button class="ab" data-act="msg">✉ Сообщение</button>' +
+      '<td onclick="event.stopPropagation()"><div class="acts">' +
+        (x.banned ? '<button class="ab grn" data-act="unban">Разбан</button>' : '<button class="ab danger" data-act="ban">Бан</button>') +
+        (x.killed ? '<button class="ab grn" data-act="unkill">−Килл</button>' : '<button class="ab danger" data-act="kill">💀 Килл</button>') +
+        '<button class="ab" data-act="msg">✉</button>' +
       '</div></td></tr>';
-  }).join("") || '<tr><td colspan="6" class="empty">Никто ещё не запускал лаунчер</td></tr>';
-  scaffold(m, "launchers", "Поиск: ID, ключ, юзер…", ["Лаунчер", "Ключ · юзер", "Запусков", "Последний", "Статус", "Действия"], rows);
-  document.getElementById("cnt").textContent = L.length + " шт";
+  }).join("") || '<tr class="norec"><td colspan="6" class="empty">Никто ещё не запускал лаунчер</td></tr>';
+  scaffold(m, "Поиск: ID, ключ, юзер…", ["Лаунчер", "Ключ · юзер", "Запусков", "Последний", "Статус", "Действия"], rows);
+}
+function launcherDetail(id){
+  api("detail?type=launcher&id=" + encodeURIComponent(id)).then(function(r){
+    if (!r.success) return toast(r.message, true);
+    var d = r.launcher;
+    var html =
+      '<div class="msec">Основное</div>' +
+      mrow("ID", '<span class="mono">' + esc(d.id) + "</span>") +
+      mrow("HWID", '<span class="mono">' + esc(d.hwid) + "</span>") +
+      mrow("Ключ", '<span class="mono">' + esc(d.key) + "</span>") +
+      mrow("Юзер", '<span class="mono">' + esc(d.user) + "</span>") +
+      mrow("Всего запусков", "<b>" + d.count + "</b>") +
+      mrow("Последний", esc(d.lastStr) + ' <span class="sub2">' + ago(d.lastStr) + "</span>") +
+      '<div class="msec">Статус</div>' +
+      mrow("Бан", d.banned ? '<span class="pill bad">забанен</span> <span class="sub2">' + esc(d.banTs || "") + "</span>" : '<span class="pill ok">нет</span>') +
+      mrow("Килл", d.killed ? '<span class="pill bad">в килл-листе</span> <span class="sub2">' + esc(d.killTs || "") + "</span>" : '<span class="pill ok">нет</span>') +
+      mrow("Сообщение в очереди", d.msg ? esc(d.msg) : "—") +
+      '<div class="msec">Ключи, которые вводил (' + r.keysUsed.length + ')</div>' +
+      (r.keysUsed.map(function(k){ return '<div class="listi"><span class="nm mono">' + esc(k) + "</span></div>"; }).join("") || '<div class="empty">—</div>') +
+      '<div class="msec">История запусков (' + r.launches.length + ")</div>" +
+      (r.launches.map(function(e){
+        return '<div class="listi"><span class="nm mono">' + esc(e.key) + '</span><span class="meta">' + esc(e.plan) + " · " + esc(e.t) + "</span></div>";
+      }).join("") || '<div class="empty">—</div>') +
+      '<div class="mact">' +
+        (d.banned ? '<button class="ab grn" data-ma="unban" data-id="' + esc(d.id) + '">Разбанить</button>' : '<button class="ab danger" data-ma="ban" data-id="' + esc(d.id) + '">Забанить</button>') +
+        (d.killed ? '<button class="ab grn" data-ma="unkill" data-id="' + esc(d.id) + '">Снять килл</button>' : '<button class="ab danger" data-ma="kill" data-id="' + esc(d.id) + '">💀 Килл при запуске</button>') +
+        '<button class="ab" data-ma="msg" data-id="' + esc(d.id) + '">✉ Отправить сообщение</button>' +
+      "</div>";
+    openModal("🖥 Лаунчер", html);
+  });
 }
 
+// ---------- licenses ----------
 function renderLicenses(m){
   if (!cache.licenses){
     m.innerHTML = '<div class="empty">Загрузка…</div>';
@@ -326,33 +438,70 @@ function renderLicenses(m){
     });
   }
   var L = cache.licenses.licenses;
+  var chips = [
+    { id: "all", label: "Все", act: licFilter === "all" },
+    { id: "activated", label: "✅ Активные", act: licFilter === "activated" },
+    { id: "fresh", label: "🆕 Не актив.", act: licFilter === "fresh" },
+    { id: "expired", label: "❌ Истёкшие", act: licFilter === "expired" },
+    { id: "banned", label: "🚫 Бан", act: licFilter === "banned" },
+  ];
   var rows = L.map(function(x){
     var pill = x.status === "activated" ? '<span class="pill ok">активен</span>'
       : x.status === "fresh" ? '<span class="pill fresh">не актив.</span>'
       : x.status === "expired" ? '<span class="pill warn">истёк</span>'
       : x.status === "banned" ? '<span class="pill bad">бан</span>'
-      : '<span class="pill warn">' + esc(x.status) + '</span>';
-    var exp = x.daysLeft === "∞" ? '<span class="pill inf">♾</span>' : esc(x.daysLeft) + ' дн';
-    return '<tr data-key="' + esc(x.key) + '">' +
+      : '<span class="pill warn">' + esc(x.status) + "</span>";
+    var exp = x.daysLeft === "∞" ? '<span class="pill inf">♾</span>' : esc(x.daysLeft) + " дн";
+    if (typeof x.daysLeft === "number" && x.daysLeft <= 3 && x.status === "activated") exp = '<span class="pill warn">' + x.daysLeft + " дн ⚠</span>";
+    return '<tr data-key="' + esc(x.key) + '" data-f="' + esc(x.status) + '" class="row-license">' +
       '<td class="mono">' + esc(x.key) + '</td>' +
       '<td>' + esc(x.plan) + '</td>' +
       '<td>' + pill + '</td>' +
       '<td class="mono">' + esc(x.userId) + '</td>' +
-      '<td class="mono">' + (x.hwid ? "…" + esc(x.hwid) : "—") + '</td>' +
+      '<td class="mono">' + (x.hwidTail ? "…" + esc(x.hwidTail) : "—") + '</td>' +
       '<td>' + exp + '</td>' +
-      '<td style="color:var(--txt2);font-size:12px">' + esc(x.activatedAt) + '</td>' +
-      '<td><div class="acts">' +
-        '<button class="ab danger" data-act="revoke">🗑 Снос</button>' +
-        '<button class="ab grn" data-act="resethwid">🔄 HWID</button>' +
-        (x.status === "banned"
-          ? '<button class="ab grn" data-act="unban">Разбан</button>'
-          : '<button class="ab danger" data-act="ban">🚫 Бан</button>') +
+      '<td class="sub2">' + esc(x.activatedAtStr) + '</td>' +
+      '<td onclick="event.stopPropagation()"><div class="acts">' +
+        '<button class="ab danger" data-act="revoke">🗑</button>' +
+        '<button class="ab grn" data-act="resethwid">🔄</button>' +
+        (x.status === "banned" ? '<button class="ab grn" data-act="unban">−🚫</button>' : '<button class="ab danger" data-act="ban">🚫</button>') +
       '</div></td></tr>';
-  }).join("") || '<tr><td colspan="8" class="empty">Лицензий нет</td></tr>';
-  scaffold(m, "licenses", "Поиск: ключ, юзер, план…", ["Ключ", "План", "Статус", "Юзер", "HWID", "Осталось", "Активирован", "Действия"], rows);
-  document.getElementById("cnt").textContent = L.length + " ключей";
+  }).join("") || '<tr class="norec"><td colspan="8" class="empty">Лицензий нет</td></tr>';
+  scaffold(m, "Поиск: ключ, юзер, план…", ["Ключ", "План", "Статус", "Юзер", "HWID", "Осталось", "Активирован", "Действия"], rows, chips);
+}
+function licenseDetail(keyL){
+  api("detail?type=license&id=" + encodeURIComponent(keyL)).then(function(r){
+    if (!r.success) return toast(r.message, true);
+    var l = r.license;
+    var partsNames = { sid: "SID", machine_guid: "MachineGuid", cpu: "CPU", name: "Имя ПК", volume: "Том C:", mac: "MAC", ram_gb: "RAM (ГБ)", os_build: "Сборка ОС", launcher_id: "ID лаунчера" };
+    var partsHtml = "";
+    if (l.parts){
+      partsHtml = '<div class="msec">Железо (привязка)</div>' + Object.keys(partsNames).map(function(k){
+        var v = l.parts[k];
+        return mrow(partsNames[k], v ? '<span class="mono">' + esc(v) + "</span>" : "—");
+      }).join("");
+    }
+    var ownerHtml = r.owner ? mrow("Владелец", esc(r.owner.name || "") + (r.owner.username ? ' @' + esc(r.owner.username) : "") + ' <span class="mono">(' + r.owner.id + ")</span>") : "";
+    openModal("🔐 Лицензия", 
+      mrow("Ключ", '<span class="mono">' + esc(l.key) + "</span>") +
+      mrow("Тариф", esc(l.plan)) +
+      mrow("Статус", esc(l.status)) +
+      ownerHtml +
+      mrow("HWID", l.hwid ? '<span class="mono">' + esc(l.hwid) + "</span>" : "—") +
+      mrow("Активаций", l.activations) +
+      mrow("Создан", esc(l.createdAt)) +
+      mrow("Активирован", esc(l.activatedAtStr)) +
+      mrow("Истекает", esc(l.expiresAtStr) + (l.daysLeft !== "∞" ? " · осталось " + esc(l.daysLeft) + " дн" : "")) +
+      partsHtml +
+      '<div class="mact">' +
+        '<button class="ab danger" data-ma="revoke" data-id="' + esc(l.key) + '">🗑 Снести ключ</button>' +
+        '<button class="ab grn" data-ma="resethwid" data-id="' + esc(l.key) + '">🔄 Сбросить HWID</button>' +
+        (l.status === "banned" ? '<button class="ab grn" data-ma="license-unban" data-id="' + esc(l.key) + '">Разбанить</button>' : '<button class="ab danger" data-ma="license-ban" data-id="' + esc(l.key) + '">🚫 Забанить</button>') +
+      "</div>");
+  });
 }
 
+// ---------- users ----------
 function renderUsers(m){
   if (!cache.users){
     m.innerHTML = '<div class="empty">Загрузка…</div>';
@@ -362,53 +511,81 @@ function renderUsers(m){
     });
   }
   var U = cache.users.users;
+  var usersById = {};
+  U.forEach(function(u){ usersById[u.id] = u; });
   var rows = U.map(function(u){
     var pill = u.banned ? '<span class="pill bad">бан</span>' : '<span class="pill ok">ок</span>';
-    return '<tr data-id="' + u.id + '">' +
-      '<td><b>' + esc(u.name || "—") + '</b>' + (u.username ? ' <span style="color:var(--txt3)">@' + esc(u.username) + '</span>' : '') + '<div class="mono">' + u.id + '</div></td>' +
+    var refBy = u.ref ? (usersById[u.ref] ? "от " + esc(usersById[u.ref].name || usersById[u.ref].username || u.ref) : "от " + u.ref) : null;
+    return '<tr data-id="' + u.id + '" class="row-user">' +
+      '<td><b>' + esc(u.name || "—") + '</b>' + (u.username ? ' <span class="sub2">@' + esc(u.username) + '</span>' : '') + '<div class="mono">' + u.id + '</div></td>' +
       '<td>' + pill + '</td>' +
-      '<td>' + (u.purchases ? '<b>' + u.purchases + '</b>' : "—") + '</td>' +
-      '<td>' + (u.refCount ? '<b style="color:#a78bfa">' + u.refCount + '</b>' : "—") + (u.refBy ? '<div style="color:var(--txt3);font-size:11px">от ' + esc(u.refBy) + '</div>' : '') + '</td>' +
-      '<td style="color:var(--txt2);font-size:12px">' + esc(u.firstSeen) + '</td>' +
-      '<td><div class="acts">' +
-        (u.banned
-          ? '<button class="ab grn" data-act="unban">Разбан</button>'
-          : '<button class="ab danger" data-act="ban">Бан</button>') +
+      '<td>' + (u.purchases.length ? '<b>' + u.purchases.length + '</b>' : "—") + '</td>' +
+      '<td>' + (u.refCount ? '<b style="color:#a78bfa">' + u.refCount + '</b>' : "—") + (refBy ? '<div class="sub2">' + refBy + '</div>' : '') + '</td>' +
+      '<td class="sub2">' + esc(u.firstSeenStr) + '</td>' +
+      '<td onclick="event.stopPropagation()"><div class="acts">' +
+        (u.banned ? '<button class="ab grn" data-act="unban">Разбан</button>' : '<button class="ab danger" data-act="ban">Бан</button>') +
       '</div></td></tr>';
-  }).join("") || '<tr><td colspan="6" class="empty">Юзеров нет</td></tr>';
-  scaffold(m, "users", "Поиск: имя, @username, ID…", ["Юзер", "Статус", "Ключей", "Пригласил", "Первый вход", "Действия"], rows);
-  document.getElementById("cnt").textContent = U.length + " юзеров";
+  }).join("") || '<tr class="norec"><td colspan="6" class="empty">Юзеров нет</td></tr>';
+  scaffold(m, "Поиск: имя, @username, ID…", ["Юзер", "Статус", "Ключей", "Пригласил", "Первый вход", "Действия"], rows);
+}
+function userDetail(id){
+  api("detail?type=user&id=" + encodeURIComponent(id)).then(function(r){
+    if (!r.success) return toast(r.message, true);
+    var u = r.user;
+    var html =
+      '<div class="msec">Профиль</div>' +
+      mrow("Имя", esc(u.name || "—") + (u.username ? ' <span class="sub2">@' + esc(u.username) + "</span>" : "")) +
+      mrow("Telegram ID", '<span class="mono">' + u.id + "</span>") +
+      mrow("Первый вход", esc(u.firstSeenStr) + ' <span class="sub2">' + ago(u.firstSeenStr) + "</span>") +
+      mrow("Статус", u.banned ? '<span class="pill bad">забанен в боте</span>' : '<span class="pill ok">ок</span>') +
+      mrow("Уведомления", u.notify ? "вкл" : "выкл") +
+      '<div class="msec">Рефералы</div>' +
+      (u.inviter ? mrow("Пригласил его", esc(u.inviter.name || u.inviter.id) + (u.inviter.username ? ' @' + esc(u.inviter.username) : "") + ' <span class="mono">(' + u.inviter.id + ")</span>") : "") +
+      mrow("Он пригласил", "<b>" + u.refCount + "</b>") +
+      (r.invited.map(function(x){
+        return '<div class="listi"><span class="nm">' + esc(x.name || x.id) + (x.username ? ' <span class="sub2">@' + esc(x.username) + "</span>" : "") + '</span><span class="meta">' + esc(x.firstSeenStr) + "</span></div>";
+      }).join("") || '<div class="empty sub2" style="padding:14px">Пока никого</div>') +
+      '<div class="msec">Покупки (' + r.purchases.length + ")</div>" +
+      (r.purchases.map(function(p){
+        return '<div class="listi"><span class="nm mono">' + esc(p.key) + '</span><span class="meta">' + esc(p.plan) + " · " + esc(p.tsStr) + "</span></div>";
+      }).join("") || '<div class="empty sub2" style="padding:14px">Не покупал</div>') +
+      '<div class="msec">Лицензии (' + r.licenses.length + ")</div>" +
+      (r.licenses.map(function(l){
+        var pill = l.status === "activated" ? "ok" : l.status === "fresh" ? "fresh" : l.status === "banned" ? "bad" : "warn";
+        return '<div class="listi"><span class="nm mono">' + esc(l.key) + '</span><span class="meta"><span class="pill ' + pill + '">' + esc(l.status) + "</span> · до " + esc(l.expiresAtStr) + "</span></div>";
+      }).join("") || '<div class="empty sub2" style="padding:14px">—</div>') +
+      '<div class="mact">' +
+        (u.banned ? '<button class="ab grn" data-ma="userunban" data-id="' + u.id + '">Разбанить в боте</button>' : '<button class="ab danger" data-ma="userban" data-id="' + u.id + '">Забанить в боте</button>') +
+        '<button class="ab" data-ma="msguser" data-id="' + u.id + '">✉ Написать в чат</button>' +
+      "</div>";
+    openModal("👤 Юзер", html);
+  });
 }
 
+// ---------- refs ----------
 function renderRefs(m){
-  if (!cache.users){
+  if (!cache.refs){
     m.innerHTML = '<div class="empty">Загрузка…</div>';
-    return api("users").then(function(r){
+    return api("refs").then(function(r){
       if (!r.success) return m.innerHTML = '<div class="empty">' + esc(r.message) + '</div>';
-      cache.users = r; renderRefs(m);
+      cache.refs = r; renderRefs(m);
     });
   }
-  var U = cache.users.users.filter(function(u){ return u.refCount > 0; });
-  var total = cache.users.users.reduce(function(a, u){ return a + u.refCount; }, 0);
-  var byRef = {};
-  cache.users.users.forEach(function(u){ if (u.refByRaw != null) {} });
-  // карта приглашённых: id реферера -> список юзеров
-  var invited = {};
-  cache.users.users.forEach(function(u){
-    if (u.refBy){ /* ник в тексте, отдельно id нет — считаем по refCount сверху */ }
-  });
+  var B = cache.refs.board;
   var medals = ["🥇", "🥈", "🥉"];
-  var rows = U.map(function(u, i){
-    return '<tr class="ref-row">' +
-      '<td class="rank">' + (medals[i] || (i+1) + ".") + '</td>' +
-      '<td><b>' + esc(u.name || "—") + '</b>' + (u.username ? ' <span style="color:var(--txt3)">@' + esc(u.username) + '</span>' : '') + '<div class="mono">' + u.id + '</div></td>' +
-      '<td><b style="color:#a78bfa;font-size:16px">' + u.refCount + '</b> ' + (u.refCount === 1 ? "человек" : "человек") + '</td>' +
-      '<td style="color:var(--txt2);font-size:12px">' + (u.purchases ? "купил ×" + u.purchases : "без покупок") + '</td></tr>';
-  }).join("") || '<tr><td colspan="4" class="empty">Пока никто никого не пригласил</td></tr>';
-  scaffold(m, "refs", "Поиск: имя, ID…", ["#", "Приглашающий", "Пригласил", "Статус покупок"], rows);
-  document.getElementById("cnt").textContent = "Всего приглашено: " + total;
+  var rows = B.map(function(u, i){
+    return '<tr data-id="' + u.id + '" class="row-user">' +
+      '<td class="rank">' + (medals[i] || (i + 1) + ".") + '</td>' +
+      '<td><b>' + esc(u.name || "—") + '</b>' + (u.username ? ' <span class="sub2">@' + esc(u.username) + '</span>' : '') + '<div class="mono">' + u.id + '</div></td>' +
+      '<td><b style="color:#a78bfa;font-size:16px">' + u.refCount + '</b></td>' +
+      '<td>' + (u.purchases ? "купил ×" + u.purchases : '<span class="sub2">без покупок</span>') + '</td>' +
+      '<td class="sub2">' + (u.invited.length ? esc(u.invited.length) + " чел. · кликни" : "—") + '</td></tr>';
+  }).join("") || '<tr class="norec"><td colspan="5" class="empty">Пока никто никого не пригласил</td></tr>';
+  scaffold(m, "Поиск: имя, ID…", ["#", "Приглашающий", "Пригласил", "Покупки", "Рефералы"], rows);
+  document.getElementById("cnt").textContent = "Всего приглашено: " + cache.refs.total + " · приглашающих: " + cache.refs.referrers;
 }
 
+// ---------- sales ----------
 function renderSales(m){
   if (!cache.sales){
     m.innerHTML = '<div class="empty">Загрузка…</div>';
@@ -419,19 +596,19 @@ function renderSales(m){
   }
   var S = cache.sales.sales;
   var rows = S.map(function(s){
-    var method = s.method === "stars" ? "⭐ Stars" : s.method === "sbp" ? "🏦 СБП" : s.method === "crypto" ? "₿ крипта" : esc(s.method);
-    return '<tr>' +
+    var method = s.method === "stars" ? "⭐ Stars" : s.method === "sbp" ? "🏦 СБП" : s.method === "crypto" ? "₿ крипта" : s.method === "sim" ? "🧪 сим" : esc(s.method);
+    return '<tr data-key="' + esc(s.key) + '" class="row-license">' +
       '<td class="mono">' + esc(s.key) + '</td>' +
       '<td>' + esc(s.plan) + '</td>' +
       '<td class="mono">' + esc(s.user) + '</td>' +
       '<td>' + method + '</td>' +
       '<td><b>' + esc(s.amount) + '</b></td>' +
-      '<td style="color:var(--txt2);font-size:12px">' + esc(s.ts) + '</td></tr>';
-  }).join("") || '<tr><td colspan="6" class="empty">Продаж пока нет</td></tr>';
-  scaffold(m, "sales", "Поиск: ключ, юзер…", ["Ключ", "План", "Юзер", "Метод", "Сумма", "Дата"], rows);
-  document.getElementById("cnt").textContent = S.length + " продаж";
+      '<td class="sub2">' + esc(s.ts) + '</td></tr>';
+  }).join("") || '<tr class="norec"><td colspan="6" class="empty">Продаж пока нет</td></tr>';
+  scaffold(m, "Поиск: ключ, юзер…", ["Ключ", "План", "Юзер", "Метод", "Сумма", "Дата"], rows);
 }
 
+// ---------- log ----------
 function renderLog(m){
   if (!cache.log){
     m.innerHTML = '<div class="empty">Загрузка…</div>';
@@ -443,58 +620,83 @@ function renderLog(m){
   var L = cache.log.log;
   var rows = L.map(function(e){
     return '<tr>' +
-      '<td style="color:var(--txt2);font-size:12px;white-space:nowrap">' + esc(e.t) + '</td>' +
+      '<td class="sub2" style="white-space:nowrap">' + esc(e.t) + '</td>' +
       '<td class="mono">' + esc(e.key) + '</td>' +
       '<td class="mono">' + esc(e.lid || "—") + '</td>' +
       '<td>' + esc(e.plan || "—") + '</td></tr>';
-  }).join("") || '<tr><td colspan="4" class="empty">Лог пуст</td></tr>';
-  scaffold(m, "log", "Поиск: ключ, лаунчер…", ["Время", "Ключ", "Лаунчер", "План"], rows);
-  document.getElementById("cnt").textContent = L.length + " записей";
+  }).join("") || '<tr class="norec"><td colspan="4" class="empty">Лог пуст</td></tr>';
+  scaffold(m, "Поиск: ключ, лаунчер…", ["Время", "Ключ", "Лаунчер", "План"], rows);
 }
 
-// ---------- действия (event delegation) ----------
+// ---------- row clicks → detail ----------
 document.getElementById("main").addEventListener("click", function(e){
+  // действия из таблиц
   var b = e.target.closest(".ab");
-  if (!b) return;
-  var tr = b.closest("tr");
-  var act = b.dataset.act;
-  if (!tr) return;
-
-  if (b.closest("tr[data-id]") && tr.dataset.id && /ban$|unban$|^kill$|^unkill$|^msg$/.test(act + "")) {
-    // лаунчер ИЛИ юзер: определяем по активной вкладке
-    if (cur === "launchers") return launcherAction(tr.dataset.id, act);
-    if (cur === "users") return userAction(tr.dataset.id, act);
+  if (b){
+    var tr = b.closest("tr");
+    var act = b.dataset.act;
+    if (tr && tr.dataset.id && (cur === "launchers")) return tableAction("launcher_action", act, tr.dataset.id);
+    if (tr && tr.dataset.id && cur === "users") return tableAction("user_action", act, tr.dataset.id);
+    if (tr && tr.dataset.key && cur === "licenses") return tableAction("license_action", act, tr.dataset.key);
   }
-  if (tr.dataset.key && cur === "licenses") return licenseAction(tr.dataset.key, act);
+  // строки → профили
+  var rl = e.target.closest("tr.row-launcher");
+  if (rl) return launcherDetail(rl.dataset.id);
+  var ru = e.target.closest("tr.row-user");
+  if (ru) return userDetail(ru.dataset.id);
+  var rk = e.target.closest("tr.row-license");
+  if (rk) return licenseDetail(rk.dataset.key);
 });
 
-function launcherAction(id, act){
+// действия внутри модалки
+document.getElementById("mBody").addEventListener("click", function(e){
+  var b = e.target.closest("[data-ma]");
+  if (!b) return;
+  var act = b.dataset.ma;
+  var id = b.dataset.id;
   if (act === "msg"){
-    var text = prompt("Сообщение для владельца лаунчера " + id + " (увидит при следующем входе):");
+    var text = prompt("Сообщение для владельца лаунчера (увидит при следующем входе):");
     if (!text) return;
     return doAction("launcher_action", { action: "msg", id: id, text: text }, "launchers");
   }
-  var sure = act === "kill" ? confirm("Убить лаунчер " + id + " при следующем запуске?") : true;
-  if (!sure) return;
-  doAction("launcher_action", { action: act, id: id }, "launchers");
-}
-function licenseAction(keyL, act){
-  if (act === "revoke"){
-    if (!confirm("ПОЛНОСТЬЮ удалить ключ " + keyL + "?\nКлюч перестанет существовать: лицензия + статистика + ключи у юзера.")) return;
+  if (act === "msguser"){
+    var t2 = prompt("Текст сообщения юзеру в Telegram:");
+    if (!t2) return;
+    return doAction("user_action", { action: "msg", id: id, text: t2 }, "users");
   }
-  doAction("license_action", { action: act, key: keyL }, "licenses");
-}
-function userAction(id, act){
-  if (act === "ban" && !confirm("Забанить юзера " + id + " в боте?")) return;
-  doAction("user_action", { action: act, id: id }, "users");
+  if (act === "userban" || act === "userunban"){
+    if (act === "userban" && !confirm("Забанить юзера в боте?")) return;
+    return doAction("user_action", { action: act === "userban" ? "ban" : "unban", id: id }, "users");
+  }
+  // launcher: ban/unban/kill/unkill | license: revoke/resethwid/ban/unban
+  if (["ban","unban","kill","unkill"].indexOf(act) !== -1) return doAction("launcher_action", { action: act, id: id }, "launchers");
+  if (["revoke","resethwid"].indexOf(act) !== -1) return doAction("license_action", { action: act, key: id }, "licenses");
+  if (act === "license-ban" || act === "license-unban") return doAction("license_action", { action: act.replace("license-",""), key: id }, "licenses");
+});
+
+function tableAction(endpoint, act, id){
+  if (act === "msg"){
+    var text = prompt("Сообщение для владельца (увидит при следующем входе):");
+    if (!text) return;
+    return doAction("launcher_action", { action: "msg", id: id, text: text }, "launchers");
+  }
+  if (act === "revoke"){
+    if (!confirm("ПОЛНОСТЬЮ удалить ключ " + id + "?\nЛицензия + статистика + ключи у юзера.")) return;
+  }
+  if (act === "kill" && !confirm("Убить лаунчер при следующем запуске?")) return;
+  if (act === "ban" && !confirm("Забанить?")) return;
+  var body = endpoint === "license_action" ? { action: act, key: id } : { action: act, id: id };
+  doAction(endpoint, body, endpoint === "license_action" ? "licenses" : (cur === "users" ? "users" : "launchers"));
 }
 
 function doAction(endpoint, body, invalidate){
   api(endpoint, { method: "POST", body: body }).then(function(r){
-    toast(r.success ? (body.action === "msg" ? "Сообщение поставлено в очередь" : "Готово: " + body.action) : (r.message || "Ошибка"), !r.success);
+    toast(r.success ? "✓ Готово: " + body.action : (r.message || "Ошибка"), !r.success);
     if (r.success){
       delete cache[invalidate];
       delete cache.overview;
+      delete cache.refs;
+      closeModal();
       render();
     }
   }).catch(function(){ toast("Сервер недоступен", true); });
