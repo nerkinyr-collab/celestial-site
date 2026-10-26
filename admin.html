@@ -295,23 +295,23 @@ function renderOverview(m){
       '</div>' +
       '<div class="cols">' +
         '<div class="panel"><h4>Выручка по методам</h4>' +
-          Object.keys(d.methodDist).map(function(k){
+          (Object.keys(d.methodDist).map(function(k){
             var v = d.methodDist[k];
             return '<div class="kv"><span>' + (methodNames[k] || esc(k)) + ' · ' + v.count + ' шт</span><b>' + (k === "stars" ? v.amount + " ⭐" : v.amount.toLocaleString("ru-RU") + " ₽") + '</b></div>';
-          }).join("") || '<div class="empty">Нет продаж</div>' +
+          }).join("") || '<div class="empty">Нет продаж</div>') +
         '</div>' +
         '<div class="panel"><h4>Ключи по тарифам</h4>' +
-          Object.keys(d.planDist).map(function(k){
+          (Object.keys(d.planDist).map(function(k){
             return '<div class="kv"><span>' + esc(k) + '</span><b>' + d.planDist[k] + '</b></div>';
-          }).join("") || '<div class="empty">Нет ключей</div>' +
+          }).join("") || '<div class="empty">Нет ключей</div>') +
         '</div>' +
       '</div>' +
       '<div class="cols">' +
         '<div class="panel"><h4>Последние события</h4><div class="feed">' +
-          d.events.map(function(e){
+          (d.events.map(function(e){
             var ic = e.type === "sale" ? "💰" : e.type === "launch" ? "🚀" : "👤";
             return '<div class="ev"><span class="ic">' + ic + '</span><span class="tx">' + esc(e.text) + '</span><span class="tm">' + esc(e.tStr) + '</span></div>';
-          }).join("") || '<div class="empty">Событий нет</div>' +
+          }).join("") || '<div class="empty">Событий нет</div>') +
         '</div></div>' +
         '<div class="panel days"><h4>Запуски по дням · последний: ' + esc(d.lastLaunch) + '</h4><div class="bars">' +
           d.days.slice().reverse().map(function(x){
